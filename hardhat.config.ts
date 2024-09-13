@@ -1,16 +1,16 @@
 // import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-require("dotenv").config({ path: ".env" });
+// require("dotenv").config({ path: ".env" });
 
-const ALCHEMY_MAINNET_API_KEY_URL = process.env.ALCHEMY_MAINNET_API_KEY_URL;
-const ACCOUNT_PRIVATE_KEY = process.env.ACCOUNT_PRIVATE_KEY;
+// const ALCHEMY_MAINNET_API_KEY_URL = process.env.ALCHEMY_MAINNET_API_KEY_URL;
+// const ACCOUNT_PRIVATE_KEY = process.env.ACCOUNT_PRIVATE_KEY;
 
 module.exports = {
   solidity: "0.8.24",
   networks: {
     hardhat: {
       forking: {
-        url: ALCHEMY_MAINNET_API_KEY_URL,
+        url: "https://eth-mainnet.g.alchemy.com/v2/QVY2UstBJhd7ELG4N6yM2GNbve_RT-0Y",
       }
     }
   },
