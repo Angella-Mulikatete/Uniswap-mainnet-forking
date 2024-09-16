@@ -2,6 +2,8 @@ import { ethers } from "hardhat";
 const helpers = require("@nomicfoundation/hardhat-network-helpers");
 
 async function main() {
+
+    //swapping USDC for DAI
     const ROUTER_ADDRESS = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D";
     const USDC = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
     const DAI = "0x6B175474E89094C44Da98b954EedeAC495271d0F";
@@ -11,8 +13,8 @@ async function main() {
     await helpers.impersonateAccount(TOKEN_HOLDER);
     const impersonatedSigner = await ethers.getSigner(TOKEN_HOLDER);
 
-    const amountOut = ethers.parseUnits("20", 18);
-    const amountInMax = ethers.parseUnits("1000", 6);
+    const amountOut = ethers.parseUnits("20", 18); //DAI
+    const amountInMax = ethers.parseUnits("1000", 6); //USDC
 
     const USDC_Contract = await ethers.getContractAt("IERC20", USDC, impersonatedSigner);
     const DAI_Contract = await ethers.getContractAt("IERC20", DAI);
